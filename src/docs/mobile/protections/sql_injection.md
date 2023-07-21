@@ -1,0 +1,3 @@
+Ah, que sorte a minha! Logo quando estava prestes a iniciar esta seção altamente inspiradora e energizante, fui agraciado com o infortúnio de ter o café esgotado. Mas não temam, caros leitores, pois assim que a preciosa jarra se encher novamente, estaremos prontos para retomar aos trabalhos. Enquanto isso, dê uma passadinha no [Blog Hacking Force](https://blog.hackingforce.com.br)
+
+![Android_Studio_img0](/coffe.gif)
