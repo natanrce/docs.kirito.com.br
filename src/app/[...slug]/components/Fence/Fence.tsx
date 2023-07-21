@@ -1,19 +1,16 @@
 'use client';
 
-import ClipboardJS from 'clipboard';
 import cx from 'classnames';
 
 import { theme } from './theme';
 import { Highlight } from 'prism-react-renderer';
 import { FC, useState, useEffect } from 'react';
 
-
 type Props = {
   children: string;
   language: string;
 };
 
-const clipboard = new ClipboardJS('.copy-button');
 export const Fence: FC<Props> = ({ children, language = 'bash' }) => {
   const [isCopied, setIsCopied] = useState(false);
 
@@ -28,18 +25,7 @@ export const Fence: FC<Props> = ({ children, language = 'bash' }) => {
   }, [isCopied]);
 
   const copyToClipboard = () => {
-  //navigator.clipboard.writeText(children).then(() => setIsCopied(true));
-  const dynamicContent = children.trim();
-
-  const tempInput = document.createElement('input');
-  tempInput.value = dynamicContent;
-  document.body.appendChild(tempInput);
-
-  tempInput.select();
-  document.execCommand('copy');
-  document.body.removeChild(tempInput);
-
-  setIsCopied(true);
+    navigator.clipboard.writeText(children).then(() => setIsCopied(true));
   };
 
   return (
