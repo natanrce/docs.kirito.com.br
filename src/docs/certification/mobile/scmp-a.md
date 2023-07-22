@@ -2,7 +2,7 @@
 
 ## Prefácio
 
-Nesta seção, compartilharei minha jornada rumo à conquista da certificação SCMP|A (Sec4US Certified Mobile Pentester Android). Essa certificação representa um desafio abrangente de invasão em dispositivos móveis Android e é oferecida pela Sec4us, com Hélvio Júnior (também conhecido como Maverick) como líder. Hélvio é um pesquisador de renome, reconhecido por suas contribuições e criações de ferramentas importantes, como shellcodetester e turbosearch, além de possuir diversas certificações na área ofensiva.
+Nesta seção, compartilharei minha jornada rumo à conquista da certificação SCMP|A (Sec4US Certified Mobile Pentester Android). Essa certificação representa um desafio abrangente de invasão em dispositivos móveis Android e é oferecida pela Sec4us, com Hélvio Júnior (também conhecido como M4v3r1cK) como líder. Hélvio é um pesquisador de renome, reconhecido por suas contribuições e criações de ferramentas importantes, como shellcodetester e turbosearch, além de possuir diversas certificações na área ofensiva.
 
 ## Introdução
 
