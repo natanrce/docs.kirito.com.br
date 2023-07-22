@@ -1,5 +1,0 @@
-{
-  "/page": "/",
-  "/templates/page": "/templates",
-  "/[...slug]/page": "/[...slug]"
-}

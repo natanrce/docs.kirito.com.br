@@ -139,16 +139,16 @@ export const navigation = {
           href: '/labs/mobile/secure_app'
         }
       ]
+    },
+    {
+      name: 'Certification Review🎓',
+      items: [
+        {
+          name: 'SCMP|A',
+          href: '/certification/mobile/scmp-a'
+        }
+      ]
     }
-    // {
-    //   name: 'Certification 🎓',
-    //   items: [
-    //     {
-    //       name: 'SCMP|A',
-    //       href: '/certification/mobile/scmp-a'
-    //     }
-    //   ]
-    // }
   ],
   [AVALIABLE_WIKI.WEB]: [
     {
