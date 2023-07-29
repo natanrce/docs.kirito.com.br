@@ -1,7 +1,8 @@
 export const AVALIABLE_WIKI = {
   MOBILE: 'mobile',
   WEB: 'web',
-  API: 'API'
+  API: 'API',
+  FORENSE: 'forense'
 };
 
 export const navigation = {
@@ -25,10 +26,6 @@ export const navigation = {
           name: 'Ferramentas de Teste de Segurança para Aplicativos Móveis (DAST)',
           href: '/mobile/tools/dast_tools'
         }
-        // {
-        //   name: 'Facilitando a montagem automatizada do seu setup com o Mobox',
-        //   href: '/mobile/tools/mobox'
-        // }
       ]
     },
     {
@@ -158,97 +155,54 @@ export const navigation = {
           name: 'Em breve',
           href: '/index'
         }
-        // {
-        //   name: 'A01:2021-Broken Access Control ',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A02:2021-Cryptographic Failures',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A03:2021-Injection',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A04:2021-Insecure Design',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A05:2021-Security Misconfiguration',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A06:2021-Vulnerable and Outdated Components',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A07:2021-Identification and Authentication Failures',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A08:2021-Software and Data Integrity Failures',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A09:2021-Security Logging and Monitoring Failures',
-        //   href: ''
-        // },
-        // {
-        //   name: 'A10:2021-Server-Side Request Forgery',
-        //   href: ''
-        // }
       ]
     }
   ],
   [AVALIABLE_WIKI.API]: [
+    // {
+    //   name: 'API (OWASP API Top 10 - 2023)📚',
+    //   items: [
+    //     {
+    //       name: 'Em breve',
+    //       href: '/index'
+    //     }
+    //   ]
+    // },
     {
-      name: 'API (OWASP API Top 10 - 2023)📚',
+      name: 'Certification Review🎓',
       items: [
         {
-          name: 'Em breve',
-          href: '/index'
+          name: 'SCWAP',
+          href: '/certification/api/scwap'
         }
-        // {
-        //   name: 'API1:2023 - Broken Object Level Authorization',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API2:2023 - Broken Authentication',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API3:2023 - Broken Object Property Level Authorization',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API4:2023 - Unrestricted Resource Consumption',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API5:2023 - Broken Function Level Authorization',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API6:2023 - Unrestricted Access to Sensitive Business Flows',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API7:2023 - Server Side Request Forgery',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API8:2023 - Security Misconfiguration',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API9:2023 - Improper Inventory Management',
-        //   href: ''
-        // },
-        // {
-        //   name: 'API10:2023 - Unsafe Consumption of APIs',
-        //   href: ''
-        // }
+      ]
+    }
+  ],
+  [AVALIABLE_WIKI.FORENSE]: [
+    // {
+    //   name: 'Fundamentos',
+    //   items: [
+    //     {
+    //       name: 'Fundamentos da Perícia Forense Digital',
+    //       href: '/digital_forensics/introduction'
+    //     },
+    //     {
+    //       name: 'Formulário de Cadeia de Custódia',
+    //       href: ''
+    //     },
+    //     {
+    //       name: 'Coleta Perícia Forense Computacional em Computador',
+    //       href: ''
+    //     }
+    //   ]
+    // },
+    {
+      name: 'Certification Review🎓',
+      items: [
+        {
+          name: 'SCFE',
+          href: '/certification/digital_forensics/scfe'
+        }
       ]
     }
   ]

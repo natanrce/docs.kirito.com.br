@@ -1,4 +1,6 @@
-# Prefácio
+# Secure App (Flag Secure)
+
+## Introdução
 
 O objetivo deste laboratório é colocar em prática os conceitos destacados na seção de proteções [Flag Secure](https://docs.kirito.com.br/mobile/secure_flag). Ao longo deste laboratório, investigaremos de perto o impacto da vulnerabilidade da secure flag no contexto do sistema operacional Android. Você terá a oportunidade de observar como a falta de segurança pode comprometer a integridade e a confidencialidade dos dados em um dispositivo Android.
 

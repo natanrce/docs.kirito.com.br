@@ -1,10 +1,8 @@
-# Sec4US - Certificação de Pentester Mobile Android (SCMP|A)
-
-## Prefácio
-
-Nesta seção, compartilharei minha jornada rumo à conquista da certificação SCMP|A (Sec4US Certified Mobile Pentester Android). Essa certificação representa um desafio abrangente de invasão em dispositivos móveis Android e é oferecida pela Sec4us, com Hélvio Júnior (também conhecido como M4v3r1cK) como líder. Hélvio é um pesquisador de renome, reconhecido por suas contribuições e criações de ferramentas importantes, como shellcodetester e turbosearch, além de possuir diversas certificações na área ofensiva.
+# Sec4US Certified Mobile Pentester Android (SCMP|A)
 
 ## Introdução
+
+Nesta seção, compartilharei minha jornada rumo à conquista da certificação SCMP|A (Sec4US Certified Mobile Pentester Android). Essa certificação representa um desafio abrangente de invasão em dispositivos móveis Android e é oferecida pela Sec4us, liderada por Hélvio Júnior, também conhecido como M4v3r1cK. Hélvio é um pesquisador de renome, reconhecido por suas contribuições e criações de ferramentas importantes, como shellcodetester e turbosearch, além de possuir diversas certificações na área ofensiva.
 
 A SCMP|A é a primeira certificação 100% prática de teste de invasão em dispositivos móveis da América Latina. Durante o exame, os candidatos enfrentam o desafio de realizar um teste de invasão em uma aplicação Android, seguindo os mais elevados padrões de segurança aplicados pelas grandes empresas brasileiras.
 
@@ -12,7 +10,7 @@ Os candidatos são avaliados quanto ao domínio das metodologias de ataques cate
 
 A certificação SCMP|A foi meticulosamente estruturada para habilitar os profissionais aprovados a coordenar e conduzir diversos tipos de testes de invasão em aplicações Android. Isso inclui não apenas o aplicativo em si, mas também todo o seu ecossistema, abrangendo aspectos como arquitetura, APIs e outros componentes.
 
-Dessa forma, os profissionais certificados pela SCMP|A estarão preparados para enfrentar os desafios do universo de segurança mobile, atendendo às exigências das empresas e contribuindo para um ambiente digital mais seguro na América Latina.
+Tendo em vista o desafio que essa certificação representa, esta documentação detalha minha preparação intensiva e dedicada para o exame SCMP|A, abordando as etapas, dificuldades superadas e lições valiosas aprendidas ao longo do processo. Adicionalmente, pretendo oferecer insights e dicas úteis para inspirar outros profissionais interessados em trilhar o caminho da segurança da informação em dispositivos móveis.
 
 ## Moeda das Certificações
 
@@ -24,7 +22,7 @@ Antes de começar a ler este guia, aprecie todas as medalhas das certificações
 
 Durante o exame, o candidato receberá um aplicativo Android no formato APK para avaliação. A API level recomendada até a presente data é a API level 30, conforme detalhado no [guia oficial do exame](https://wiki.sec4us.com.br/scmpa-sec4us-certified-mobile-pentester-android-exam-guide/).
 
-O candidato terá 72 horas para concluir os testes, coletar todas as informações necessárias e identificar as flags que correspondem a algumas vulnerabilidades. Após o término das 72 horas do exame, será concedido um prazo adicional de 24 horas para elaborar um relatório técnico detalhado sobre as vulnerabilidades identificadas durante o processo de reconhecimento e exploração. Um template do relatório será fornecido no início do exame para facilitar a elaboração.
+O candidato terá 72 horas para concluir os testes, coletar todas as informações necessárias e identificar as flags que correspondem a algumas vulnerabilidades. Após o término das 72 horas do exame, será concedido um prazo adicional de 24 horas para elaborar um relatório técnico detalhado sobre as vulnerabilidades identificadas. Um template do relatório será fornecido no início do exame para facilitar a elaboração.
 
 É importante ressaltar que nem todas as vulnerabilidades possuem uma flag associada. No entanto, durante a elaboração do relatório, é fundamental evidenciar a flag encontrada através de uma captura de tela.
 
@@ -36,7 +34,7 @@ A certificação simula um ambiente real e, portanto, inclui todas as principais
 
 2. **Root Detection:** A proteção de root detection é uma medida de segurança implementada para identificar se um dispositivo possui acesso root ou superusuário. Essa detecção é usada para identificar dispositivos que foram desbloqueados ou modificados, o que pode representar um risco de segurança, pois aplicativos com privilégios de root podem acessar áreas sensíveis do sistema e potencialmente comprometer a integridade do aplicativo ou violar a privacidade do usuário. Ao detectar a presença do root, o aplicativo pode tomar ações preventivas, como restringir funcionalidades ou negar o acesso para garantir uma maior segurança.
 
-3. **Emulation Detection:** A proteção de emulação detection refere-se a técnicas empregadas para identificar se um aplicativo está sendo executado em um ambiente de emulação ou virtualização, em vez de um dispositivo real. Essas técnicas são usadas para evitar que análises maliciosas sejam realizadas em um ambiente controlado e para proteger a propriedade intelectual do aplicativo, impedindo sua engenharia reversa. Ao detectar a emulação, o aplicativo pode alterar seu comportamento ou mesmo interromper sua execução para dificultar a análise e proteger-se contra possíveis ameaças.
+3. **Emulation Detection:** A proteção de emulation detection refere-se a técnicas empregadas para identificar se um aplicativo está sendo executado em um ambiente de emulação ou virtualização, em vez de um dispositivo real. Essas técnicas são usadas para evitar que análises maliciosas sejam realizadas em um ambiente controlado e para proteger a propriedade intelectual do aplicativo, impedindo sua engenharia reversa. Ao detectar a emulação, o aplicativo pode alterar seu comportamento ou mesmo interromper sua execução para dificultar a análise e proteger-se contra possíveis ameaças.
 
 4. **SSL Pinning:** A proteção de SSL Pinning é uma medida de segurança utilizada em aplicativos para garantir que a comunicação com um servidor remoto seja estabelecida apenas com certificados SSL específicos. Isso impede ataques de intermediários que tentam interceptar e decifrar o tráfego, uma vez que o aplicativo só confiará em certificados pré-configurados ou fixos (pins) para se comunicar com o servidor. Dessa forma, mesmo que um certificado não autorizado seja apresentado, a conexão será bloqueada, protegendo os dados sensíveis transmitidos entre o aplicativo e o servidor.
 
@@ -48,7 +46,7 @@ Todas as técnicas descritas acima serão abordadas nesta documentação, onde s
 
 ## Pontuação do Exame
 
-O Exame irá propor uma pontuação para cada objetivo. Cada objetivo especifica os seus requisitos próprios, que precisam ser cumpridos integralmente para a obtenção de todos os pontos. O candidato deve adquirir uma pontuação mínima de 70 pontos para ser aprovado no exame, sendo que a pontuação máxima do exame é de 100 pontos.
+O Exame irá propor uma pontuação para cada objetivo. Cada objetivo especifica os seus requisitos próprios, requisitos estes que precisam ser cumpridos em totalidade para a obtenção de todos os pontos. O candidato deve adquirir uma pontuação mínima de 70 pontos para ser aprovado no exame, sendo que a pontuação máxima do exame é de 100 pontos.
 
 ## Preparação do Ambiente
 
@@ -98,7 +96,29 @@ Lembre-se de que a qualidade e a eficácia do relatório de pentest têm um impa
 
 ## Recomendações Gerais
 
-Lembre-se de fazer pausas durante o exame. Saia um pouco da frente do computador para clarear a mente, tome água e pense de forma criativa para resolver os problemas. Outro fator crucial é gerenciar bem o seu tempo. Lembro-me de que entreguei meu relatório faltando apenas 1 minuto para o término da prova, acabei adormecendo e, quando percebi, várias horas já haviam passado.
+Durante o exame, é importante lembrar-se da importância de fazer pausas para clarear a mente. Tire alguns momentos para se afastar do computador, tomar água e permita-se pensar de forma criativa para resolver os problemas. Gerenciar bem o tempo também é crucial. Antes de iniciar o exame, certifique-se de ter compreendido completamente as informações fornecidas no [guia do exame](https://wiki.sec4us.com.br/scmpa-sec4us-certified-mobile-pentester-android-exam-guide/).
+
+Aqui estão algumas dicas adicionais para auxiliar no exame:
+
+1. **Organize o Tempo:** Antes de iniciar, revise o escopo do exame e defina quanto tempo dedicará a cada tarefa. Planeje seu tempo de forma equilibrada para cobrir todas as etapas do pentest.
+
+2. **Priorize as Vulnerabilidades:** Durante o exame, ao identificar vulnerabilidades, priorize-as de acordo com sua gravidade. Concentre-se primeiro nas mais críticas para garantir que sejam documentadas e abordadas no relatório.
+
+3. **Documente suas Ações:** Mantenha um registro detalhado de suas ações durante o exame. Isso o ajudará a organizar as informações para o relatório posteriormente e também a rastrear seu progresso.
+
+4. **Preste bastante atenção nos códigos:** Ao executar a engenharia reversa do aplicativo, preste muita atenção em todas as classes e funções do código para compreender o código em sua totalidade.
+
+5. **Comunique-se de Forma Clara:** Ao elaborar o relatório, seja claro e objetivo em suas descrições. Forneça informações técnicas suficientes para que os leitores compreendam as vulnerabilidades, suas causas e as soluções propostas.
+
+6. **Revise e Verifique:** Antes de enviar o relatório final, faça uma revisão completa para garantir que todas as informações estejam corretas e coerentes. Verifique se todas as vulnerabilidades estão documentadas e se suas soluções são viáveis.
+
+7. **Aprenda com a Experiência:** Independentemente do resultado do exame, encare-o como uma oportunidade de aprendizado. Identifique áreas em que pode melhorar e busque aprimorar suas habilidades para futuros desafios.
+
+8. **Mantenha a Calma:** Durante o exame, é normal enfrentar situações desafiadoras. Mantenha a calma, confie em suas habilidades e aborde os problemas de forma sistemática.
+
+9. **Pratique:** Antes do exame, pratique suas habilidades em ambientes controlados.
+
+Lembre-se de que a certificação SCMP|A é uma oportunidade para demonstrar seus conhecimentos e habilidades em teste de invasão em dispositivos móveis. Mantenha-se focado, siga as recomendações e confie em sua preparação. Boa sorte no exame e que sua jornada de busca pela certificação seja bem-sucedida!
 
 ## Aplicativos para Treinar
 

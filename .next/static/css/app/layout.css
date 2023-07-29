@@ -1260,6 +1260,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(31 31 31 / var(--tw-border-opacity));
 }
+.border-\[\#2d8843\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(45 136 67 / var(--tw-border-opacity));
+}
 .border-\[\#2e2e2e\] {
   --tw-border-opacity: 1;
   border-color: rgb(46 46 46 / var(--tw-border-opacity));
@@ -1276,9 +1280,9 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(79 39 104 / var(--tw-border-opacity));
 }
-.border-\[\#4fe668\] {
+.border-\[\#780004\] {
   --tw-border-opacity: 1;
-  border-color: rgb(79 230 104 / var(--tw-border-opacity));
+  border-color: rgb(120 0 4 / var(--tw-border-opacity));
 }
 .border-white\/10 {
   border-color: rgb(255 255 255 / 0.1);
@@ -1323,11 +1327,14 @@ video {
 .to-\[\#0d3868\] {
   --tw-gradient-to: #0d3868 var(--tw-gradient-to-position);
 }
+.to-\[\#1e6433\] {
+  --tw-gradient-to: #1e6433 var(--tw-gradient-to-position);
+}
 .to-\[\#4f2768\] {
   --tw-gradient-to: #4f2768 var(--tw-gradient-to-position);
 }
-.to-\[\#4fe668\] {
-  --tw-gradient-to: #4fe668 var(--tw-gradient-to-position);
+.to-\[\#590004\] {
+  --tw-gradient-to: #590004 var(--tw-gradient-to-position);
 }
 .fill-zinc-400 {
   fill: #a1a1aa;
@@ -1475,6 +1482,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 114 245 / var(--tw-text-opacity));
 }
+.text-\[\#40ac48\] {
+  --tw-text-opacity: 1;
+  color: rgb(64 172 72 / var(--tw-text-opacity));
+}
 .text-\[\#444\] {
   --tw-text-opacity: 1;
   color: rgb(68 68 68 / var(--tw-text-opacity));
@@ -1491,10 +1502,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(142 78 198 / var(--tw-text-opacity));
 }
-.text-\[\#8ee6c6\] {
-  --tw-text-opacity: 1;
-  color: rgb(142 230 198 / var(--tw-text-opacity));
-}
 .text-\[\#EAEAEA\] {
   --tw-text-opacity: 1;
   color: rgb(234 234 234 / var(--tw-text-opacity));
@@ -1502,6 +1509,10 @@ video {
 .text-\[\#a1a1a1\] {
   --tw-text-opacity: 1;
   color: rgb(161 161 161 / var(--tw-text-opacity));
+}
+.text-\[\#d2000b\] {
+  --tw-text-opacity: 1;
+  color: rgb(210 0 11 / var(--tw-text-opacity));
 }
 .text-\[\#eaeaea\] {
   --tw-text-opacity: 1;

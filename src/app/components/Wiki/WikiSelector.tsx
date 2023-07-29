@@ -68,7 +68,34 @@ const wikis = {
     title: 'API Hacking Wiki',
     description: 'API hacking resources.',
     icon: (
-      <div className="text-[#8ee6c6] border rounded-md p-1.5 border-[#4fe668] border bg-gradient-to-b from-black to-[#4fe668]">
+      <div className="text-[#d2000b] border rounded-md p-1.5 border-[#780004] border bg-gradient-to-b from-black to-[#590004]">
+        <svg
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+          width="24"
+          style={{
+            color: 'currentcolor',
+            width: 20,
+            height: 20
+          }}
+        >
+          <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z" />
+          <path d="M13 2v7h7" />
+        </svg>
+      </div>
+    )
+  },
+  [AVALIABLE_WIKI.FORENSE]: {
+    id: 'forense',
+    title: 'Digital Forensics Wiki',
+    description: 'Digital Forensics esources.',
+    icon: (
+      <div className="text-[#40ac48] border rounded-md p-1.5 border-[#2d8843] border bg-gradient-to-b from-black to-[#1e6433]">
         <svg
           fill="none"
           height="24"
