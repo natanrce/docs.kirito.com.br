@@ -212,7 +212,7 @@ export const navigation = {
       name: 'Commands Windows',
       items: [
         {
-          name: 'File Downloading',
+          name: 'Transferência de Arquivos entre Atacante e Vítima',
           href: '/windows/download/file_downloading'
         }
       ]
