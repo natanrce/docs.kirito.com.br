@@ -467,4 +467,4 @@ certutil -decode output nc.exe
 
 ## Conclusão
 
-Em suma, o Windows oferece diversas maneiras de realizar o download de arquivos, e as mencionadas acima são apenas algumas delas. Caso deseje explorar ainda mais opções, recomendo visitar o site [LOLBAS](https://lolbas-project.github.io/#), onde você encontrará informações detalhadas sobre outras formas de executar downloads de forma eficiente no sistema operacional Windows.
+Em suma, o Windows oferece diversas maneiras de realizar o download de arquivos, e as mencionadas acima são apenas algumas delas. Caso deseje explorar ainda mais opções, recomendo visitar o site [LOLBAS](https://lolbas-project.github.io/#/download), onde você encontrará informações detalhadas sobre outras formas de executar downloads de forma eficiente no sistema operacional Windows.
