@@ -14,7 +14,7 @@ const wikis = {
     title: 'Mobile Hacking Wiki',
     description: 'Android mobile hacking resources.',
     icon: (
-      <div className="text-[#0072f5] border rounded-md p-1.5 border-[#0d3868] border bg-gradient-to-b from-black to-[#0d3868]">
+      <div className="text-[#0176d2] border rounded-md p-1.5 border-[#00379a] border bg-gradient-to-b from-black to-[#002c86]">
         <svg
           fill="none"
           height="24"
@@ -93,9 +93,36 @@ const wikis = {
   [AVALIABLE_WIKI.FORENSE]: {
     id: 'forense',
     title: 'Digital Forensics Wiki',
-    description: 'Digital Forensics esources.',
+    description: 'Digital Forensics resources.',
     icon: (
       <div className="text-[#40ac48] border rounded-md p-1.5 border-[#2d8843] border bg-gradient-to-b from-black to-[#1e6433]">
+        <svg
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+          width="24"
+          style={{
+            color: 'currentcolor',
+            width: 20,
+            height: 20
+          }}
+        >
+          <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z" />
+          <path d="M13 2v7h7" />
+        </svg>
+      </div>
+    )
+  },
+  [AVALIABLE_WIKI.WINDOWS]: {
+    id: 'windows',
+    title: 'Windows Wiki',
+    description: 'Windows resources.',
+    icon: (
+      <div className="text-[#00accd] border rounded-md p-1.5 border-[#0286a4] border bg-gradient-to-b from-black to-[#01687c]">
         <svg
           fill="none"
           height="24"

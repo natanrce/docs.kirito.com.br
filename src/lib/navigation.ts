@@ -2,7 +2,8 @@ export const AVALIABLE_WIKI = {
   MOBILE: 'mobile',
   WEB: 'web',
   API: 'API',
-  FORENSE: 'forense'
+  FORENSE: 'forense',
+  WINDOWS: 'windows'
 };
 
 export const navigation = {
@@ -202,6 +203,17 @@ export const navigation = {
         {
           name: 'SCFE',
           href: '/certification/digital_forensics/scfe'
+        }
+      ]
+    }
+  ],
+  [AVALIABLE_WIKI.WINDOWS]: [
+    {
+      name: 'Commands Windows',
+      items: [
+        {
+          name: 'File Downloading',
+          href: '/windows/download/file_downloading'
         }
       ]
     }
