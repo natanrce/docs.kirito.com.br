@@ -418,19 +418,25 @@ O certreq trabalha apenas com arquivos menores que 50 KB. Portanto, quando lidan
 
 A seguir, explicaremos os passos para realizar o compartilhamento de arquivos:
 
-1. Identifique o tamanho do arquivo:
+1. Transforme o executável nc.exe em um arquivo texto, que é a representação em base64 
+
+```bash
+cat nc.exe | base64 > nc.txt
+```
+
+2. Identifique o tamanho do arquivo:
 
 ```bash
 ls -lah
 ```
 
-2. Divida-o em tamanhos menores:
+3. Divida-o em tamanhos menores:
 
 ```bash 
 split -d -n 2 nc.txt part
 ```
 
-3. Inicie o servidor PHP com o seguinte comando:
+4. Inicie o servidor PHP com o seguinte comando:
 
 > O binário "certreq" utiliza o método POST para a requisição HTTP. Para garantir que o download ocorra sem problemas, é necessário utilizar o servidor PHP, em vez do Python. 
 >
