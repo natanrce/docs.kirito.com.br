@@ -50,9 +50,7 @@ A preparação cuidadosa do ambiente, com as ferramentas certas e recursos como 
 
 ## Bases Importantes
 
-Para conquistar essa certificação, é fundamental possuir um conhecimento sólido em programação, uma vez que a prova exige a confecção de exploits personalizados para explorar vulnerabil
-
-idades específicas. É importante ressaltar que o uso de ferramentas automatizadas, como SQLmap, SQLninja e similares, não é permitido no exame. Portanto, é essencial desenvolver seus próprios scripts para realizar os testes de invasão de forma eficiente.
+Para conquistar essa certificação, é fundamental possuir um conhecimento sólido em programação, uma vez que a prova exige a confecção de exploits personalizados para explorar vulnerabilidades específicas. É importante ressaltar que o uso de ferramentas automatizadas, como SQLmap, SQLninja e similares, não é permitido no exame. Portanto, é essencial desenvolver seus próprios scripts para realizar os testes de invasão de forma eficiente.
 
 Dominar conceitos de programação e scripting será essencial para identificar e explorar vulnerabilidades durante o teste. Além disso, a capacidade de criar exploits personalizados permitirá que você demonstre habilidades avançadas em segurança ofensiva e se destaque como um profissional preparado para conduzir testes de invasão em APIs Web de forma independente e precisa.
 
