@@ -13,11 +13,11 @@ export const navigation = {
       items: [
         {
           name: 'Guia de Instalação e Configuração do Android Studio',
-          href: '/mobile/tools/android_studio'
+          href: '/mobile/tools/android-studio'
         },
         {
           name: 'Ferramentas essenciais para engenharia reversa em apps mobile',
-          href: '/mobile/tools/reverse_engineering'
+          href: '/mobile/tools/reverse-engineering'
         },
         {
           name: 'Guia de Instalação e Uso do Frida, Frida-tools, Objection e Frida-Server',
@@ -25,7 +25,7 @@ export const navigation = {
         },
         {
           name: 'Ferramentas de Teste de Segurança para Aplicativos Móveis (DAST)',
-          href: '/mobile/tools/dast_tools'
+          href: '/mobile/tools/dast-tools'
         }
       ]
     },
@@ -34,11 +34,11 @@ export const navigation = {
       items: [
         {
           name: 'Android Device Bridge (ADB) Commands Tricks',
-          href: '/mobile/tricks/adb_commands_tricks'
+          href: '/mobile/tricks/adb-commands-tricks'
         },
         {
           name: 'Disassembly, Assembly e Assinatura',
-          href: '/mobile/tricks/dis_commands_tricks'
+          href: '/mobile/tricks/dis-commands-tricks'
         }
       ]
     },
@@ -47,43 +47,43 @@ export const navigation = {
       items: [
         {
           name: 'M1: Insecure Authentication/Authorization',
-          href: '/mobile/owasp-2023/M1-Insecure_Authentication-Authorization'
+          href: '/mobile/owasp-2023/M1-Insecure-Authentication-Authorization'
         },
         {
           name: 'M2: Insecure Communication',
-          href: '/mobile/owasp-2023/M2-Insecure_Communication'
+          href: '/mobile/owasp-2023/M2-Insecure-Communication'
         },
         {
           name: 'M3: Inadequate Supply Chain Security',
-          href: '/mobile/owasp-2023/M3-Inadequate_Supply_Chain_Security'
+          href: '/mobile/owasp-2023/M3-Inadequate-Supply-Chain-Security'
         },
         {
           name: 'M4: Inadequate Privacy Controls',
-          href: '/mobile/owasp-2023/M4-Inadequate_Privacy_Controls'
+          href: '/mobile/owasp-2023/M4-Inadequate-Privacy-Controls'
         },
         {
           name: 'M5: Improper Credential Usage',
-          href: '/mobile/owasp-2023/M5-Improper_Credential_Usage'
+          href: '/mobile/owasp-2023/M5-Improper-Credential-Usage'
         },
         {
           name: 'M6: Insufficient Input/Output Validation',
-          href: '/mobile/owasp-2023/M6-Insufficient_Input-Output_Validation'
+          href: '/mobile/owasp-2023/M6-Insufficient-Input-Output-Validation'
         },
         {
           name: 'M7: Security Misconfiguration',
-          href: '/mobile/owasp-2023/M7-Security_Misconfiguration'
+          href: '/mobile/owasp-2023/M7-Security-Misconfiguration'
         },
         {
           name: 'M8: Insufficient Cryptography',
-          href: '/mobile/owasp-2023/M8-Insufficient_Cryptography'
+          href: '/mobile/owasp-2023/M8-Insufficient-Cryptography'
         },
         {
           name: 'M9: Insecure Data Storage',
-          href: '/mobile/owasp-2023/M9-Insecure_Data_Storage'
+          href: '/mobile/owasp-2023/M9-Insecure-Data-Storage'
         },
         {
           name: 'M10: Insufficient Binary Protections',
-          href: '/mobile/owasp-2023/M10-Insufficient_Binary_Protections'
+          href: '/mobile/owasp-2023/M10-Insufficient-Binary-Protections'
         }
       ]
     },
@@ -92,7 +92,7 @@ export const navigation = {
       items: [
         {
           name: 'Aquisição de aplicativos: o primeiro passo para o pentest mobile',
-          href: '/mobile/pentest/application_acquisition'
+          href: '/mobile/pentest/application-acquisition'
         }
       ]
     },
@@ -101,31 +101,31 @@ export const navigation = {
       items: [
         {
           name: 'Flag Secure',
-          href: '/mobile/protections/secure_flag'
+          href: '/mobile/protections/secure-flag'
         },
         {
           name: 'Emulation Detection',
-          href: '/mobile/protections/emulation_detection'
+          href: '/mobile/protections/emulation-detection'
         },
         {
           name: 'Frida Detection',
-          href: '/mobile/protections/frida_detection'
+          href: '/mobile/protections/frida-detection'
         },
         {
           name: 'Root Detection',
-          href: '/mobile/protections/root_detection'
+          href: '/mobile/protections/root-detection'
         },
         {
           name: 'SSL/TLS Pinning',
-          href: '/mobile/protections/ssl_tls_pinning'
+          href: '/mobile/protections/ssl-tls-pinning'
         },
         {
           name: 'Insecure Data Storage',
-          href: '/mobile/protections/insecure_data_storage'
+          href: '/mobile/protections/insecure-data-storage'
         },
         {
           name: 'SQL Injection',
-          href: '/mobile/protections/sql_injection'
+          href: '/mobile/protections/sql-injection'
         }
       ]
     },
@@ -134,7 +134,7 @@ export const navigation = {
       items: [
         {
           name: 'Secure App (Flag Secure)',
-          href: '/labs/mobile/secure_app'
+          href: '/labs/mobile/secure-app'
         }
       ]
     },
@@ -185,7 +185,7 @@ export const navigation = {
     //   items: [
     //     {
     //       name: 'Fundamentos da Perícia Forense Digital',
-    //       href: '/digital_forensics/introduction'
+    //       href: '/digital-forensics/introduction'
     //     },
     //     {
     //       name: 'Formulário de Cadeia de Custódia',
@@ -202,7 +202,7 @@ export const navigation = {
       items: [
         {
           name: 'SCFE',
-          href: '/certification/digital_forensics/scfe'
+          href: '/certification/digital-forensics/scfe'
         }
       ]
     }
@@ -213,7 +213,7 @@ export const navigation = {
       items: [
         {
           name: 'Transferência de Arquivos entre Atacante e Vítima',
-          href: '/windows/download/file_downloading'
+          href: '/windows/download/file-downloading'
         }
       ]
     }

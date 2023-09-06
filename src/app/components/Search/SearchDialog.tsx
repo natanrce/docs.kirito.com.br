@@ -1,8 +1,10 @@
 'use client';
 
+import { FC, useEffect, SVGProps, useRef, FormHTMLAttributes } from 'react';
+
 import { useSearch } from '@/app/providers';
 import { useAutoComplete } from '@/app/hooks/useAutoComplete';
-import { FC, useEffect, SVGProps, useRef } from 'react';
+
 import { SearchInput } from './SearchInput';
 import { SearchResults } from './SearchResults';
 

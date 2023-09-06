@@ -1,10 +1,7 @@
 'use client';
 
 import cx from 'classnames';
-
-import { Tag } from '@markdoc/markdoc';
 import { FC, useState } from 'react';
-
 import { useTableOfContent } from '@/app/hooks';
 
 type Props = {

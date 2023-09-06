@@ -17,7 +17,7 @@ export const Navigation: FC = () => {
   const { selectedWiki } = useWiki();
 
   const shouldOpen = (items: Array<NavigationItem>) =>
-    items.map((item) => item.href).includes(pathname);
+    items.map((item) => item.href).includes(pathname as string);
 
   return (
     <div className="h-[calc(100vh-130px)] overflow-y-auto">
