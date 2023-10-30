@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { Listbox } from '@headlessui/react';
 
 import { useWiki } from '@/app/providers';
-import { AVALIABLE_WIKI } from '@/lib/navigation';
+import { AVALIABLE_WIKI } from '@/lib/wiki';
 
 import { WikiOption } from './WikiOption';
 
@@ -14,7 +14,7 @@ const wikis = {
     title: 'Mobile Hacking Wiki',
     description: 'Android mobile hacking resources.',
     icon: (
-      <div className="text-[#0176d2] border rounded-md p-1.5 border-[#00379a] border bg-gradient-to-b from-black to-[#002c86]">
+      <div className="text-[#0176d2] rounded-md p-1.5 border-[#00379a] border bg-gradient-to-b from-black to-[#002c86]">
         <svg
           fill="none"
           height="24"
@@ -41,7 +41,7 @@ const wikis = {
     title: 'WEB Hacking Wiki',
     description: 'Web hacking resources.',
     icon: (
-      <div className="text-[#8e4ec6] border rounded-md p-1.5 border-[#4f2768] border bg-gradient-to-b from-black to-[#4f2768]">
+      <div className="text-[#8e4ec6] rounded-md p-1.5 border-[#4f2768] border bg-gradient-to-b from-black to-[#4f2768]">
         <svg
           fill="none"
           height="24"
@@ -68,7 +68,7 @@ const wikis = {
     title: 'API Hacking Wiki',
     description: 'API hacking resources.',
     icon: (
-      <div className="text-[#d2000b] border rounded-md p-1.5 border-[#780004] border bg-gradient-to-b from-black to-[#590004]">
+      <div className="text-[#d2000b] rounded-md p-1.5 border-[#780004] border bg-gradient-to-b from-black to-[#590004]">
         <svg
           fill="none"
           height="24"
@@ -95,7 +95,34 @@ const wikis = {
     title: 'Digital Forensics Wiki',
     description: 'Digital Forensics resources.',
     icon: (
-      <div className="text-[#40ac48] border rounded-md p-1.5 border-[#2d8843] border bg-gradient-to-b from-black to-[#1e6433]">
+      <div className="text-[#40ac48] rounded-md p-1.5 border-[#2d8843] border bg-gradient-to-b from-black to-[#1e6433]">
+        <svg
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+          width="24"
+          style={{
+            color: 'currentcolor',
+            width: 20,
+            height: 20
+          }}
+        >
+          <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z" />
+          <path d="M13 2v7h7" />
+        </svg>
+      </div>
+    )
+  },
+  [AVALIABLE_WIKI.CERTIFICATION]: {
+    id: 'certification',
+    title: 'Certification Wiki',
+    description: 'Certification resources.',
+    icon: (
+      <div className="text-[#40ac48] rounded-md p-1.5 border-[#2d8843] border bg-gradient-to-b from-black to-[#1e6433]">
         <svg
           fill="none"
           height="24"
@@ -122,7 +149,7 @@ const wikis = {
     title: 'Windows Wiki',
     description: 'Windows resources.',
     icon: (
-      <div className="text-[#00accd] border rounded-md p-1.5 border-[#0286a4] border bg-gradient-to-b from-black to-[#01687c]">
+      <div className="text-[#00accd] rounded-md p-1.5 border-[#0286a4] border bg-gradient-to-b from-black to-[#01687c]">
         <svg
           fill="none"
           height="24"

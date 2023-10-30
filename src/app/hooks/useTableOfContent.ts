@@ -1,72 +1,74 @@
 'use client';
 
+import { Heading } from '@/lib/docs-adapter';
 import { useState, useEffect, useCallback } from 'react';
 
-export function useTableOfContent(tableOfContent: any) {
-  const [currentSection, setCurrentSection] = useState(tableOfContent[0]?.id);
+interface HeadingWithTop {
+  id: string;
+  top: number;
+}
 
-  const getHeadings = useCallback(() => {
-    function* traverse(node: any): any {
-      if (Array.isArray(node)) {
-        for (const child of node) {
-          yield* traverse(child);
+export function useTableOfContent(toc: Heading[]) {
+  const [currentHeading, setCurrentHeading] = useState(toc[0].id);
+
+  const getHeadings = useCallback<() => HeadingWithTop[]>(() => {
+    function* transverseToc(toc: Heading | Heading[]) {
+      if (Array.isArray(toc)) {
+        for (const item of toc) {
+          yield* transverseToc(item);
         }
       } else {
-        const element = document.getElementById(node.id);
-        if (!element) return;
+        const element = document.getElementById(toc.id);
 
-        const style = window.getComputedStyle(element);
-        const scrollMt = parseFloat(style.scrollMarginTop);
+        if (element) {
+          const style = window.getComputedStyle(element);
+          const scrollMt = parseFloat(style.scrollMarginTop);
 
-        const top =
-          window.scrollY + element.getBoundingClientRect().top - scrollMt;
+          const top =
+            window.scrollY + element.getBoundingClientRect().top - scrollMt;
 
-        yield { id: node.id, top };
-
-        for (const child of node.children ?? []) {
-          yield* traverse(child);
+          yield {
+            id: toc.id,
+            top
+          };
         }
       }
     }
 
-    return Array.from(traverse(tableOfContent));
-  }, [tableOfContent]);
+    return Array.from(transverseToc(toc));
+  }, [toc]);
 
   useEffect(() => {
-    const headings = getHeadings() as any;
+    const headings = getHeadings();
 
-    if (tableOfContent.length === 0 || headings.length === 0) return;
+    const handleScroll = () => {
+      const sortedHeadings = headings.sort((a, b) => a.top - b.top);
 
-    function onScrollListener() {
-      const sortedHeadings = headings
-        .concat([])
-        .sort((a: { top: number }, b: { top: number }) => a.top - b.top);
-
-      const top = window.pageYOffset;
+      const top = window.scrollY;
       let current = sortedHeadings[0].id;
 
       for (let i = 0; i < sortedHeadings.length; i++) {
-        if (top >= sortedHeadings[i].top - 100) {
+        if (top >= sortedHeadings[i].top - 110) {
           current = sortedHeadings[i].id;
         }
       }
 
-      setCurrentSection(current);
-    }
+      setCurrentHeading(current);
+    };
 
-    window.addEventListener('scroll', onScrollListener, {
+    window.addEventListener('scroll', handleScroll, {
       capture: true,
       passive: true
     });
 
-    onScrollListener();
+    handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', onScrollListener, {
+      window.removeEventListener('scroll', handleScroll, {
         capture: true
       });
     };
-  }, [getHeadings, tableOfContent]);
+  }, [toc, getHeadings]);
 
-  return { currentSection };
+  return currentHeading;
 }

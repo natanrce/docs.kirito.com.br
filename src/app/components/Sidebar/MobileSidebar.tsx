@@ -47,7 +47,6 @@ export const MobileSidebar: FC = () => {
       {isOpen && (
         <div className="h-screen w-full block" data-docs-crowler>
           <WikiSelector />
-          <MobileNavigation />
         </div>
       )}
     </div>

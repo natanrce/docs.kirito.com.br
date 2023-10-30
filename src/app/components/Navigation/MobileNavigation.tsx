@@ -1,20 +1,22 @@
 'use client';
-import cx from 'classnames';
+import cx from 'clsx';
 import Link from 'next/link';
 
 import { FC } from 'react';
 import { usePathname } from 'next/navigation';
 
-import { useWiki } from '@/app/providers';
-import { navigation } from '@/lib/navigation';
+import { Navigation as TNavigation } from '@/lib/docs-adapter';
 
-export const MobileNavigation: FC = () => {
+type NavigationProps = {
+  navigation: TNavigation[];
+};
+
+export const MobileNavigation: FC<NavigationProps> = ({ navigation }) => {
   const pathname = usePathname();
-  const { selectedWiki } = useWiki();
 
   return (
-    <div className="h-[calc(100vh-200px)] overflow-y-auto">
-      {navigation[selectedWiki].map((category, index) => (
+    <div className="overflow-hidden">
+      {navigation.map((category, index) => (
         <ul key={index} className="pb-3 pt-2">
           <li className="my-1.5 ml-[3px] px-2">
             <h3 className="mb-[4px] text-sm font-medium text-[#eaeaea]">
@@ -22,7 +24,7 @@ export const MobileNavigation: FC = () => {
             </h3>
             <div className="h-auto flex flex-col">
               <ul>
-                {category.items.map((item, index) => (
+                {category.children.map((item, index) => (
                   <li key={index} className="my-1.5 text-sm">
                     <Link
                       className={cx(

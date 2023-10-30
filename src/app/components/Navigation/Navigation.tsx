@@ -1,58 +1,31 @@
-import cx from 'classnames';
+'use client';
+
+import cx from 'clsx';
 import Link from 'next/link';
 
 import { FC } from 'react';
-import { Disclosure } from '@headlessui/react';
 import { usePathname } from 'next/navigation';
+import { Navigation as TNavigation } from '@/lib/docs-adapter';
 
-import { useWiki } from '@/app/providers';
-import { navigation } from '@/lib/navigation';
-
-type NavigationItem = {
-  href: string;
+type NavigationProps = {
+  navigation: TNavigation[];
 };
 
-export const Navigation: FC = () => {
+export const Navigation: FC<NavigationProps> = ({ navigation }) => {
   const pathname = usePathname();
-  const { selectedWiki } = useWiki();
-
-  const shouldOpen = (items: Array<NavigationItem>) =>
-    items.map((item) => item.href).includes(pathname as string);
 
   return (
-    <div className="h-[calc(100vh-130px)] overflow-y-auto">
-      {navigation[selectedWiki].map((category, index) => (
-        <Disclosure
-          as="div"
-          key={index}
-          defaultOpen={
-            (index === 0 && pathname === '/') || shouldOpen(category.items)
-          }
-        >
-          {({ open }) => (
-            <ul>
-              <li className="relative mt-6">
-                <Disclosure.Button className="flex justify-between w-full text-left mb-[4px] px-2 text-sm font-medium text-white">
-                  {category.name}
-                  <svg
-                    fill="none"
-                    height="16"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    viewBox="0 0 24 24"
-                    width="16"
-                    className={cx(
-                      'text-current transition-transform',
-                      open && 'rotate-90'
-                    )}
-                  >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </Disclosure.Button>
-                <Disclosure.Panel className="mb-8" as="ul">
-                  {category.items.map((item, index) => (
+    <>
+      {navigation.map((category, index) => (
+        <ul key={index}>
+          <li className="relative mt-6">
+            <h3 className="mb-[4px] px-2 text-sm font-medium text-white">
+              {category.name}
+            </h3>
+            <div>
+              <div>
+                <ul className="mb-8">
+                  {category.children.map((item, index) => (
                     <li className="my-1.5" key={index}>
                       <Link
                         href={item.href}
@@ -67,12 +40,12 @@ export const Navigation: FC = () => {
                       </Link>
                     </li>
                   ))}
-                </Disclosure.Panel>
-              </li>
-            </ul>
-          )}
-        </Disclosure>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
       ))}
-    </div>
+    </>
   );
 };

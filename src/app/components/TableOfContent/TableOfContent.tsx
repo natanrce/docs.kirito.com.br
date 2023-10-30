@@ -1,23 +1,21 @@
 'use client';
 
-import cx from 'classnames';
+import clsx from 'clsx';
 import { FC, useState } from 'react';
-import { useTableOfContent } from '@/app/hooks';
+import { useTableOfContent } from '../../hooks/useTableOfContent';
+
+import { Heading } from '@/lib/docs-adapter';
 
 type Props = {
-  headings: Tag<string, Record<string, any>>[];
+  headings: Heading[];
 };
 
 export const TableOfContents: FC<Props> = ({ headings }) => {
-  const { currentSection } = useTableOfContent(headings);
+  const currentHeading = useTableOfContent(headings);
   const [isScrollVisible, setIsScrollVisible] = useState(false);
 
-  const sectionIsActive = (section: any) => {
-    if (section.id === currentSection) {
-      return true;
-    }
-
-    return section.children.findIndex(sectionIsActive) > -1;
+  const isActive = (section: Heading) => {
+    return section.id === currentHeading;
   };
 
   const scrollToTop = () => {
@@ -47,7 +45,7 @@ export const TableOfContents: FC<Props> = ({ headings }) => {
         data-docs-crowler
       >
         <h2 className="mb-1 mt-[7px] text-sm font-medium text-white">
-          Nessa página
+          On this page
         </h2>
         {headings.length > 0 && (
           <ul className="mt-4 space-y-3 text-sm">
@@ -55,11 +53,12 @@ export const TableOfContents: FC<Props> = ({ headings }) => {
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
-                  className={
-                    sectionIsActive(section)
-                      ? 'block leading-[1.6] font-medium text-blue-500'
-                      : 'block text-[#888] hover:text-[#999] leading-[1.6]'
-                  }
+                  className={clsx(
+                    'block',
+                    isActive(section)
+                      ? 'leading-[1.6] font-medium text-blue-500'
+                      : 'text-[#888] hover:text-[#999] leading-[1.6]'
+                  )}
                 >
                   {section.title}
                 </a>
@@ -69,7 +68,7 @@ export const TableOfContents: FC<Props> = ({ headings }) => {
         )}
         <div className="mt-4 space-y-2 border-t border-[#444] pt-5 text-sm" />
         <button
-          className={cx(
+          className={clsx(
             'flex items-center gap-x-2 text-sm text-[#888] transition-opacity hover:text-white',
             isScrollVisible ? 'opacity-100' : 'opacity-0'
           )}
